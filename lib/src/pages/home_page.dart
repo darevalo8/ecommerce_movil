@@ -28,15 +28,15 @@ class _MenuState extends State<Menu> with TickerProviderStateMixin {
     print("Hola2");
   }
 
-  @override
-  void initState() {
-    menu = _categoryIcon();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   menu = _categoryIcon();
+  //   super.initState();
+  // }
 
   // @override
   // Widget build(BuildContext context) {
-  //   print("sssd");
+  //   print("sss");
   //   return Text("prueba");
   // }
   @override
@@ -106,8 +106,8 @@ class _MenuState extends State<Menu> with TickerProviderStateMixin {
 
                   /// Call var categoryIcon
                   // categoryIcon,
-                  // _categoryIcon(),
-                  menu,
+                  _categoryIcon(),
+                  //menu,
                   // _prueba(),
                   Padding(
                     padding: EdgeInsets.only(top: 10.0),
@@ -133,42 +133,26 @@ class _MenuState extends State<Menu> with TickerProviderStateMixin {
 
   Widget _categoryIcon() {
     print("daniel11");
-    menuProvider.getMenu().then((data) {
-      print(data);
-      // return Container(
-      //   color: Colors.white,
-      //   padding: EdgeInsets.only(top: 20.0),
-      //   alignment: AlignmentDirectional.centerStart,
-      //   child: CategoryIconValueWidget(
-      //     menuList: data,
-      //     tap1: this.holaMundo,
-      //     titulo: AppLocalizations.of(context).tr('menu'),
-      //   ),
-      // );
-      return Text('hola');
-    });
     
-
-    // return Text('hola');
-    // return FutureBuilder(
-    //   future: menuProvider.getMenu(),
-    //   builder: (BuildContext context, AsyncSnapshot<List<Jerarquia>> snapshot) {
-    //     if (snapshot.hasData) {
-    //       return Container(
-    //         color: Colors.white,
-    //         padding: EdgeInsets.only(top: 20.0),
-    //         alignment: AlignmentDirectional.centerStart,
-    //         child: CategoryIconValueWidget(
-    //           menuList: snapshot.data,
-    //           tap1: this.holaMundo,
-    //           titulo: AppLocalizations.of(context).tr('menu'),
-    //         ),
-    //       );
-    //     } else {
-    //       return Container(
-    //           height: 400.0, child: Center(child: CircularProgressIndicator()));
-    //     }
-    //   },
-    // );
+    return FutureBuilder(
+      future: menuProvider.getMenu(),
+      builder: (BuildContext context, AsyncSnapshot<List<Jerarquia>> snapshot) {
+        if (snapshot.hasData) {
+          return Container(
+            color: Colors.white,
+            padding: EdgeInsets.only(top: 20.0),
+            alignment: AlignmentDirectional.centerStart,
+            child: CategoryIconValueWidget(
+              menuList: snapshot.data,
+              tap1: this.holaMundo,
+              titulo: AppLocalizations.of(context).tr('menu'),
+            ),
+          );
+        } else {
+          return Container(
+              height: 400.0, child: Center(child: CircularProgressIndicator()));
+        }
+      },
+    );
   }
 }

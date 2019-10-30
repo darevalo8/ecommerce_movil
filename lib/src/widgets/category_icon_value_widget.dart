@@ -67,30 +67,72 @@ class CategoryIconValueWidget extends StatelessWidget {
 
     //   fila.add(item);
     //   print(itemJson.nombre);
-    //   if (fila.length%4 == 0) {
-        
+    //   if (fila.length == 4) {
+
     //     menu.add(this.addRow(fila));
     //     // fila.clear();
     //     fila = new List();
-        
+
     //   }
-    //   else{
-    //     menu.add(this.addRow(fila));
-    //   }
+    //   // else{
+    //   //   menu.add(this.addRow(fila));
+    //   // }
     // }
-    var longitud = menuList.length;
-    print("La logintud es: $longitud ");
-    for (var item in menuList){
-      print(item.nombre);
+    // var longitud = menuList.length;
+    // print("La logintud ess: $longitud ");
+    // for (var item in menuList){
+    //   print(item.nombre);
+    // }
+    print(menuList.length);
+    for (var itemJson in menuList) {
+      var item = InkWell(
+        // key: ,
+        onTap: tap1,
+        child: Column(
+          children: <Widget>[
+            Image.asset(
+              "assets/icon/otomotif.png",
+              height: 19.2,
+            ),
+            Padding(padding: EdgeInsets.only(top: 7.0)),
+            Text(
+              itemJson.nombre,
+              style: TextStyle(
+                fontFamily: "Sans",
+                fontSize: 10.0,
+                fontWeight: FontWeight.w500,
+              ),
+            )
+          ],
+        ),
+      );
+      fila.add(item);
     }
+    bool bandera = true;
+    while(bandera){
+      if (fila.length <= 4) {
+        print("entreeeee");
+        menu.add(this.addRow(fila));
+        fila = new List();
+      }else if(fila.length >4){
+        menu.add(this.addRow(fila.sublist(0, 4)));
+        print(fila.sublist(0,3));
+        fila.removeRange(0, 4);
+      }
+      if(fila.length == 0){
+        bandera = false;
+      }
+    }
+    // print(menu);
     return menu;
   }
+  void agregarAlMenu(){
 
+  }
   Widget addRow(List<Widget> itemsRow) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: itemsRow
-    );
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: itemsRow);
   }
 }

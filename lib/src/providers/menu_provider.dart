@@ -18,7 +18,7 @@ class MenuProvider {
     final response = await http.get(url);
     final decodeData = json.decode(response.body);
     final menuList = Menu.fromJsonList(decodeData['jerarquia']);
-    // print(menuList.items);
+    
     return menuList.items;
   }
 }

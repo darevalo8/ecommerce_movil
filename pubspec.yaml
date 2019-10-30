@@ -121,7 +121,7 @@ flutter:
     - assets/imgItem/mackbook.jpg
     - assets/imgItem/fashion1.jpg
     - assets/imgItem/flashsale2.jpg
-    - assets/imgItem/flashsale3.jpg
+    - assets/imgItem/flashsale3.JPG
     - assets/imgItem/flashsale4.jpg
     - assets/imgItem/flashsale5.jpg
     - assets/imgItem/category1.png
@@ -200,7 +200,7 @@ flutter:
     - assets/img/SliderLogin4.png
     - assets/imgIllustration/IlustrasiMessage.png
     - assets/imgIllustration/IlustrasiOnBoarding1.png
-    - assets/imgIllustration/IlustrasiOnBoarding2.png
+    - assets/imgIllustration/IlustrasiOnboarding2.png
     - assets/imgIllustration/IlustrasiOnBoarding3.png
     - assets/avatars/avatar-1.jpg
     - assets/avatars/avatar-2.jpg
