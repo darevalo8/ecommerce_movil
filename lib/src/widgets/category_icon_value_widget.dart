@@ -43,47 +43,8 @@ class CategoryIconValueWidget extends StatelessWidget {
     var paddingTwo = Padding(padding: EdgeInsets.only(top: 20.0));
     menu.add(paddingOne);
     menu.add(paddingTwo);
-    // for (var itemJson in menuList) {
-    //   var item = InkWell(
-    //     onTap: tap1,
-    //     child: Column(
-    //       children: <Widget>[
-    //         Image.asset(
-    //           "assets/icon/otomotif.png",
-    //           height: 19.2,
-    //         ),
-    //         Padding(padding: EdgeInsets.only(top: 7.0)),
-    //         Text(
-    //           itemJson.nombre,
-    //           style: TextStyle(
-    //             fontFamily: "Sans",
-    //             fontSize: 10.0,
-    //             fontWeight: FontWeight.w500,
-    //           ),
-    //         )
-    //       ],
-    //     ),
-    //   );
-
-    //   fila.add(item);
-    //   print(itemJson.nombre);
-    //   if (fila.length == 4) {
-
-    //     menu.add(this.addRow(fila));
-    //     // fila.clear();
-    //     fila = new List();
-
-    //   }
-    //   // else{
-    //   //   menu.add(this.addRow(fila));
-    //   // }
-    // }
-    // var longitud = menuList.length;
-    // print("La logintud ess: $longitud ");
-    // for (var item in menuList){
-    //   print(item.nombre);
-    // }
-    print(menuList.length);
+   
+    
     for (var itemJson in menuList) {
       var item = InkWell(
         // key: ,
